@@ -33,7 +33,13 @@ class Console(cmd.Cmd):
 				msj=imp.FecthRow()
 
 	def do_mensaje(self, cmd):
-		imp.SimpleCmd('810'+cmd[0:40])
+		imp.SimpleCmd('810'+cmd[0:39])
+
+	def do_encabc(self,cmd):
+		arr=cmd.split(' ',1)
+		ln=arr[0].zfill(2)
+		msj='PH'+ln+arr[1][0:40].center(40)
+		imp.SimpleCmd(msj)
 
 	def do_reset(self, cmd):
 		imp.SimpleCmd('e')
@@ -116,6 +122,10 @@ class Console(cmd.Cmd):
 
 	def help_display(self):
 		print "Envia un mensaje al display"
+
+	def help_encabc(self,cmd):
+		print "Envia el encabezado para los documentos "
+		print "Ej. encabc [1-8] TITULO DE EJEMPLO"
 
 	def help_send (self):
 		print "Envia un comando simple a la impresora (devuelve ACK o NAK)"
