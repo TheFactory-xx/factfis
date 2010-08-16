@@ -1,5 +1,6 @@
 
 Andres Hocevar
+Gracias a la colaboracion de Manuel Rojas
 
 http://code.google.com/p/factfis/
 
