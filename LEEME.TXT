@@ -1,0 +1,22 @@
+
+Andres Hocevar
+
+http://code.google.com/p/factfis/
+
+
+Actualmente solo ha sido probado en 
+impresoras bixolon 270, 350 y Aclas
+PP1F3, en sistemas Linux
+
+Para correr el proyecto se necesita:
+ -Python 2.5 o mayor
+ -Libreria python serial (pySerial)
+
+Para correr el ejemplo de una factura
+basta con el siguiente comando
+
+   python factfis.py ejemplo.prm
+
+Automaticamente puede detectar el puerto
+al cual ha sido conectada la impresora
+
