@@ -40,7 +40,7 @@ for linea in f:
 		linea = linea[:-1]
 	linea=linea.rstrip()
 	if len(linea.strip())>0:
-		m = re.match(r"i[0-9]{2}[rR][eE][fF][eE][rR][eE][nN][cC][iI][aA][ :]*(?P<numero>[0-9]+) *[cC][aA][jJ][aA][ :]*(?P<caja>[0-9]+) *", linea)
+		m = re.match(r"i[0-9]{2}[rR][eE][fF][eE][rR][eE][nN][cC][iI][aA][ :]*(?P<numero>[NC0-9]+) *[cC][aA][jJ][aA][ :]*(?P<caja>[0-9]+) *", linea)
 		if m!=None:
 			referen=m.group('numero')
 			caja=m.group('caja')
@@ -48,8 +48,17 @@ for linea in f:
 
 		if fac and linea=='e':
 			print 'En espera para cupones ...'
-			sleep(3)
+			#imp.reiniciar()
+			sleep(8)
 		if imp.SimpleCmd(linea):
+			continue
+		elif imp.SimpleCmd(linea):
+			continue
+		elif imp.SimpleCmd(linea):
+			continue
+		elif imp.SimpleCmd(linea):
+			continue
+		elif imp.SimpleCmd(linea):
 			continue
 		else:
 			print imp.envio;

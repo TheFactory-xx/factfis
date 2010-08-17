@@ -308,3 +308,14 @@ class factfis:
 
 
 		return status+"   "+error
+
+	def reiniciar(self):
+		if self.bandera:
+			self.ser.close()
+			time.sleep(1)
+			self.ser.open()
+
+	def __del__(self):
+		if self.bandera:
+			self.ser.close()
+

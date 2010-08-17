@@ -44,6 +44,13 @@ class Console(cmd.Cmd):
 	def do_reset(self, cmd):
 		imp.SimpleCmd('e')
 
+	def do_bandera(self, cmd):
+		arr=cmd.split(' ',1)
+		ln=arr[0].zfill(2)
+		lo=arr[1].zfill(2)
+		msj='PJ'+ln+lo
+		imp.SimpleCmd(msj)
+
 	def do_estado1(self, cmd):
 		imp.mdepura=False
 		print imp.estado1()
@@ -162,6 +169,10 @@ class Console(cmd.Cmd):
 
 	def help_gaveta(self):
 		print "Apertura de gaveta"
+
+	def help_bandera(self):
+		print "Asigna valores a las banderas"
+		print "Ej. bandera 0 0"
 
 	def help_gaveta(self):
 		print "Imprime el ultimo documento guardado"
