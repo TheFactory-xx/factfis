@@ -1,6 +1,22 @@
+ #/***************************************************************************
+ #*
+ #* Este programa es software libre: usted puede redistribuirlo y / o modificar
+ #* bajo los términos de la GNU General Public License publicada por
+ #* la Free Software Foundation, bien de la versión 3 de la Licencia, o
+ #* (A su elección) cualquier versión posterior.
+ #*
+ #* Este programa se distribuye con la esperanza de que sea útil,
+ #* pero SIN NINGUNA GARANTÍA, incluso sin la garantía implícita de
+ #* COMERCIALIZACIÓN o IDONEIDAD PARA UN PROPÓSITO PARTICULAR. Ver la
+ #* Licencia Pública General GNU para más detalles.
+ #*
+ #* Debería haber recibido una copia de la GNU General Public License
+ #* junto con este programa. Si no, véase <http://www.gnu.org/licenses/>.
+ #*
+ #***************************************************************************/
 
-Andres Hocevar
-Gracias a la colaboracion de Manuel Rojas
+Autor: Andres Hocevar
+       Gracias a la colaboración de Manuel Rojas Duque
 
 http://code.google.com/p/factfis/
 
@@ -11,7 +27,7 @@ PP1F3, en sistemas Linux
 
 Para correr el proyecto se necesita:
  -Python 2.5 o mayor
- -Libreria python serial (pySerial)
+ -Librería python serial (pySerial)
 
 Para correr el ejemplo de una factura
 basta con el siguiente comando
