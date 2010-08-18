@@ -41,6 +41,7 @@ class factfis:
 						self.CloseFpctrl()
 		else:
 			self.puerto = p
+			self.OpenFpctrl()
 
 	def OpenFpctrl(self):
 		if not self.bandera:

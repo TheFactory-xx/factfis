@@ -33,7 +33,10 @@ class Console(cmd.Cmd):
 				msj=imp.FecthRow()
 
 	def do_mensaje(self, cmd):
-		imp.SimpleCmd('810'+cmd[0:39])
+		text=self.wrap(cmd,40)
+		for msj in text.split('\n'):
+			imp.SimpleCmd('800'+msj[0:39])
+		imp.SimpleCmd('810')
 
 	def do_encabc(self,cmd):
 		arr=cmd.split(' ',1)
@@ -183,8 +186,13 @@ class Console(cmd.Cmd):
 	#def complete_get_color (self, text, line, begidx, endix):
 	#	return [i for i in self._colors if i.startswith(text)]
 
-	#do_EOF   = do_quit
-	#help_EOF = help_quit
+	do_e   = do_reset
+	do_QUIT = do_quit
+	do_exit = do_quit
+	do_EXIT = do_quit
+
+	def wrap(self,text, width):
+		return reduce(lambda line, word, width=width: '%s%s%s' % (line,' \n'[(len(line)-line.rfind('\n')-1+ len(word.split('\n',1)[0]) >= width)],word),text.split(' '))
 
 if __name__ == "__main__":
 	if imp.puerto != None:
