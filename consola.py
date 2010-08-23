@@ -1,14 +1,29 @@
 #!/usr/bin/python
 # -*- coding: iso-8859-1 -*-
-#/****************************************************************************
-#*
-#* Andres Hocevar 2010-2011
-#*
-#* consola.py
-#* licencia GPL v3
-#* Permite gestiona la impresora fiscal como linea de comandos
-#*          http://code.google.com/p/factfis
-#***************************************************************************/
+ #* OEOG Envia un archivo a la impresora fiscal
+ #*
+ #*
+ #* @version   Beta 1
+ #* @author    Andres Hocevar
+ #*
+ #* @since     Agosto 10 del 2010
+ #**/
+ #/***************************************************************************
+ #*
+ #* Este programa es software libre: usted puede redistribuirlo y / o modificar
+ #* bajo los términos de la GNU General Public License publicada por
+ #* la Free Software Foundation, bien de la versión 3 de la Licencia, o
+ #* (A su elección) cualquier versión posterior.
+ #*
+ #* Este programa se distribuye con la esperanza de que sea útil,
+ #* pero SIN NINGUNA GARANTÍA, incluso sin la garantía implícita de
+ #* COMERCIALIZACIÓN o IDONEIDAD PARA UN PROPÓSITO PARTICULAR. Ver la
+ #* Licencia Pública General GNU para más detalles.
+ #*
+ #* Debería haber recibido una copia de la GNU General Public License
+ #* junto con este programa. Si no, véase <http://www.gnu.org/licenses/>.
+ #*
+ #***************************************************************************/
 import cmd
 import fiscales
 
@@ -133,7 +148,7 @@ class Console(cmd.Cmd):
 	def help_display(self):
 		print "Envia un mensaje al display"
 
-	def help_encabc(self,cmd):
+	def help_encabc(self):
 		print "Envia el encabezado para los documentos "
 		print "Ej. encabc [1-8] TITULO DE EJEMPLO"
 
