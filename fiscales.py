@@ -67,7 +67,7 @@ class factfis:
 				bytesize=serial.EIGHTBITS,
 				parity  =serial.PARITY_EVEN,
 				stopbits=serial.STOPBITS_ONE,
-				timeout =1.5,
+				timeout =15,
 				writeTimeout=5,
 				xonxoff=0,
 				rtscts=0) 

@@ -56,7 +56,7 @@ class Console(cmd.Cmd):
 	def do_encabc(self,cmd):
 		arr=cmd.split(' ',1)
 		ln=arr[0].zfill(2)
-		msj='PH'+ln+arr[1][0:40].center(40)
+		msj='PH'+ln+arr[1][0:39].center(40)
 		imp.SimpleCmd(msj)
 
 	def do_reset(self, cmd):
@@ -134,6 +134,9 @@ class Console(cmd.Cmd):
 	def do_gaveta(self, cmd):
 		imp.SimpleCmd('w')
 
+	def do_leer(self, cmd):
+		imp._read(1)
+
 	def do_version(self, cmd):
 		imp.SimpleCmd('x')
 
@@ -147,6 +150,9 @@ class Console(cmd.Cmd):
 
 	def help_display(self):
 		print "Envia un mensaje al display"
+
+	def help_leer(self):
+		print "Lee 1 byte"
 
 	def help_encabc(self):
 		print "Envia el encabezado para los documentos "
