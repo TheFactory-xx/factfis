@@ -1,29 +1,16 @@
 #!/usr/bin/python
 # -*- coding: iso-8859-1 -*-
- #* OEOG Envia un archivo a la impresora fiscal
- #*
- #*
- #* @version   Beta 1
- #* @author    Andres Hocevar
- #*
- #* @since     Agosto 10 del 2010
- #**/
- #/***************************************************************************
- #*
- #* Este programa es software libre: usted puede redistribuirlo y / o modificar
- #* bajo los términos de la GNU General Public License publicada por
- #* la Free Software Foundation, bien de la versión 3 de la Licencia, o
- #* (A su elección) cualquier versión posterior.
- #*
- #* Este programa se distribuye con la esperanza de que sea útil,
- #* pero SIN NINGUNA GARANTÍA, incluso sin la garantía implícita de
- #* COMERCIALIZACIÓN o IDONEIDAD PARA UN PROPÓSITO PARTICULAR. Ver la
- #* Licencia Pública General GNU para más detalles.
- #*
- #* Debería haber recibido una copia de la GNU General Public License
- #* junto con este programa. Si no, véase <http://www.gnu.org/licenses/>.
- #*
- #***************************************************************************/
+#/****************************************************************************
+#*
+#* Autor: Andres Hocevar
+#* Adaptacion Panama: Luisana Zambrano
+#*
+#* consola.py
+#* licencia GPL v3
+#* Permite gestionar la impresora fiscal como linea de comandos
+#*          http://code.google.com/p/factfis
+#*          http://github.com/TheFactory/factfis
+#***************************************************************************/
 import cmd
 import fiscales
 
@@ -56,7 +43,7 @@ class Console(cmd.Cmd):
 	def do_encabc(self,cmd):
 		arr=cmd.split(' ',1)
 		ln=arr[0].zfill(2)
-		msj='PH'+ln+arr[1][0:39].center(40)
+		msj='PH'+ln+arr[1][0:40].center(40)
 		imp.SimpleCmd(msj)
 
 	def do_reset(self, cmd):
@@ -83,21 +70,22 @@ class Console(cmd.Cmd):
 				if msj==None:
 					break
 				m=msj.split(chr(10))
-				if len(m)>=9:
-					print m[9]
+				if len(m)>=14:
+					print m[14]
 		imp.mdepura=True
 
-	def do_getrif(self, cmd):
+	def do_getruc(self, cmd):
 		imp.mdepura=False
 		if imp.QueryCmd('S1'):
 			msj=1
 			while True:
 				msj=imp.FecthRow()
+				#print "recibe:"+str(msj)
 				if msj==None:
 					break
 				m=msj.split(chr(10))
-				if len(m)>=8:
-					print m[8]
+				if len(m)>=12:
+					print m[12]
 		imp.mdepura=True
 
 	def do_getultimo(self, cmd):
@@ -134,9 +122,6 @@ class Console(cmd.Cmd):
 	def do_gaveta(self, cmd):
 		imp.SimpleCmd('w')
 
-	def do_leer(self, cmd):
-		imp._read(1)
-
 	def do_version(self, cmd):
 		imp.SimpleCmd('x')
 
@@ -151,10 +136,7 @@ class Console(cmd.Cmd):
 	def help_display(self):
 		print "Envia un mensaje al display"
 
-	def help_leer(self):
-		print "Lee 1 byte"
-
-	def help_encabc(self):
+	def help_encabc(self,cmd):
 		print "Envia el encabezado para los documentos "
 		print "Ej. encabc [1-8] TITULO DE EJEMPLO"
 

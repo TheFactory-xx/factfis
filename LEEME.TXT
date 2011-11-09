@@ -1,33 +1,22 @@
- #/***************************************************************************
- #*
- #* Este programa es software libre: usted puede redistribuirlo y / o modificar
- #* bajo los términos de la GNU General Public License publicada por
- #* la Free Software Foundation, bien de la versión 3 de la Licencia, o
- #* (A su elección) cualquier versión posterior.
- #*
- #* Este programa se distribuye con la esperanza de que sea útil,
- #* pero SIN NINGUNA GARANTÍA, incluso sin la garantía implícita de
- #* COMERCIALIZACIÓN o IDONEIDAD PARA UN PROPÓSITO PARTICULAR. Ver la
- #* Licencia Pública General GNU para más detalles.
- #*
- #* Debería haber recibido una copia de la GNU General Public License
- #* junto con este programa. Si no, véase <http://www.gnu.org/licenses/>.
- #*
- #***************************************************************************/
-
-Autor: Andres Hocevar
-       Gracias a la colaboración de Manuel Rojas Duque
-
+Autor: Andres Hocevar con la colaboracion de Manuel Rojas
 http://code.google.com/p/factfis/
 
+Modificado por: Luisana Zambrano
+http://github.com/TheFactory/factfis/
 
-Actualmente solo ha sido probado en 
-impresoras bixolon 270, 350 y Aclas
-PP1F3, en sistemas Linux
+Probado en impresoras:
+Bixolon SRP350
+Biloxon 270
+Biloxon 350 
+Aclas PP1F3
+Dascom Tally 1125
+Star HSP7000
+
+Funciona en sistemas Windows y Linux
 
 Para correr el proyecto se necesita:
  -Python 2.5 o mayor
- -Librería python serial (pySerial)
+ -Libreria python serial (pySerial)
 
 Para correr el ejemplo de una factura
 basta con el siguiente comando
@@ -35,5 +24,5 @@ basta con el siguiente comando
    python factfis.py ejemplo.prm
 
 Automaticamente puede detectar el puerto
-al cual ha sido conectada la impresora
-
+al cual ha sido conectada la impresora, 
+tanto en Linux como en Windows.

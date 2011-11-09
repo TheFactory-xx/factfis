@@ -5,8 +5,10 @@
  #*
  #* @version   Beta 1
  #* @author    Andres Hocevar
+ #* @adaptacion_panama  Luisana Zambrano 
  #*
  #* @since     Agosto 10 del 2010
+ #* @modifed   Noviembre 08 del 2011
  #**/
  #/***************************************************************************
  #*
@@ -42,7 +44,8 @@ class factfis:
 
 	def __init__(self,p='auto'):
 		if p=='auto':
-			posibles=glob.glob('/dev/ttyS*') + glob.glob('/dev/ttyUSB*')
+			posibles=['COM0','COM1','COM2','COM3','COM4','COM5','COM6','COM7']+\
+            glob.glob('/dev/ttyS*') + glob.glob('/dev/ttyUSB*')
 			for self.puerto in posibles:
 				if self.OpenFpctrl():
 					if self.ManipulaCTS_RTS():
@@ -67,7 +70,7 @@ class factfis:
 				bytesize=serial.EIGHTBITS,
 				parity  =serial.PARITY_EVEN,
 				stopbits=serial.STOPBITS_ONE,
-				timeout =15,
+				timeout =1.5,
 				writeTimeout=5,
 				xonxoff=0,
 				rtscts=0) 
