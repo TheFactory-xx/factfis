@@ -63,7 +63,6 @@ for linea in f:
 			referen=m.group('numero')
 			caja=m.group('caja')
 			fac=True
-			print fac
 
 		if fac and linea=='e':
 			print 'En espera para cupones ...'
@@ -85,7 +84,6 @@ f.close()
 
 #para sacar la ultima factura y el serial
 if fac:
-	print "Creando archivo num____.txt"
 	m=imp.estado1()
 	serial=m[9]
 	ufac=m[2];
