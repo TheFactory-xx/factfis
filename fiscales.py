@@ -42,7 +42,8 @@ class factfis:
 
 	def __init__(self,p='auto'):
 		if p=='auto':
-			posibles=glob.glob('/dev/ttyS*') + glob.glob('/dev/ttyUSB*')
+            posibles=['COM0','COM1','COM2','COM3','COM4','COM5','COM6','COM7']+\
+            glob.glob('/dev/ttyS*') + glob.glob('/dev/ttyUSB*')
 			for self.puerto in posibles:
 				if self.OpenFpctrl():
 					if self.ManipulaCTS_RTS():
